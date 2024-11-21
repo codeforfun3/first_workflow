@@ -21,7 +21,16 @@ jobs:
       - name: Set up Node.js 
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: latest
+
+      - name: Create package.json (if missing)
+        run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+          fi
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Print a message for main branch
         if: github.ref == 'refs/heads/main'
@@ -47,7 +56,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: latest
+
+      - name: Create package.json (if missing)
+        run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+          fi
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Print a message for main branch
         if: github.ref == 'refs/heads/main'
