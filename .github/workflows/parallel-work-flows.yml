@@ -19,9 +19,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Node.js 
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: 20
 
       - name: Print a message for main branch
         if: github.ref == 'refs/heads/main'
@@ -45,9 +45,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: 20
 
       - name: Print a message for main branch
         if: github.ref == 'refs/heads/main'
